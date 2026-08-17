@@ -426,6 +426,7 @@ const userLogin = async (req, res, next) => {
         email: user.email,
         role: user.role,
         provider: user.provider,
+        hasPassword: !!user.password,
       },
     });
   } catch (error) {
