@@ -43,8 +43,11 @@ app.use(
   }),
 );
 
-app.get("/", (req, res) => {
-  res.json({ success: true, message: "Authentication API Running..," });
+app.get("/health", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "AUTH SYSTEM server is running",
+    });
 });
 
 app.use("/api/auth", authLimiter, authRoute);
